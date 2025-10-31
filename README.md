@@ -35,7 +35,8 @@ Milestones & Suggested Schedule (Oct 20 — Dec 5)
 Mission Statement
   Help UBC students mitigate the stress of their course-load
 
-Problem
+Problem 
+
   Being a student at UBC vancouver campus can get very busy, especially with large amount of projects, assignments, and exams. This factor makes finding a sufficient study spot quickly all the more important. However, due to the sheer number of students at UBC, it often becomes very difficult to find an available location that meets the students wants ( such as empty tables, rooms with whiteboard, and charging spots). Interestingly, there has not been many substantial external or internal solution applied in mitigating this problem. We want to work on a solution to this problem because we ourselves as well as our friends struggle to find study spots. Evidence of this issue can be marked on reddit:
 
 https://www.reddit.com/r/UBC/comments/8gva6w/hey_guys_where_are_the_best_spots_for_silent/
