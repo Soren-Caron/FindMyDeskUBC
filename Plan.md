@@ -1,5 +1,6 @@
 Who coordinates the work
 1.1 Roles and responsiblities simplified
+
   - The project manager (PM) - Soren:
     - Plans the meetings and process. Does risk management and stakeholder communication. Will also help in programming.
 
@@ -10,6 +11,7 @@ Who coordinates the work
     - Implement frontend (MapView, ListView, FeedbackForm), backend API (AI implementation).
 
 1.2 PM Practices and workflow
+
   - Everything will be posted here on github, such as our code or planning (REQUIREMENTS.md, ARCHITECTURE.md, and PLAN.md).
   - There is a seperate google docs called the issues form keeps track of what needs to be done and who is doing it.
   - In the same google docs at the top we have a table to show progress and productivity with the following:
@@ -25,6 +27,7 @@ Who coordinates the work
     - When merged, nothing breaks
 
 1.3 Meetings
+
   - Regular Meetings every 3-4 days that last about 30 minutes to check how everyone is doing. PM leads the discussion here.
   - Twice a week we have 2-3 hour meeting where we discuss the code. The developers lead the discussion here while PM plans
   - Design review: we will plan a weekly design review about 2-3 hours to discuss the current design, check if we should implement anything new, bugs, etc. Designer leads the discussion here while PM plans.
@@ -35,6 +38,7 @@ Who coordinates the work
 
 
 2. Communication tools & reasons
+
   - GitHub — Showcase code and branches
     - Why: Required for submission and traceable history of code
 
@@ -49,6 +53,11 @@ Who coordinates the work
 
   - Google Drive — Long form docs, meeting notes, or large files.
     - Why: Easy sharing and backup.
+
+
+
+
+
 
 
 
@@ -98,42 +107,41 @@ Who coordinates the work
 
 
 
-
 4. Timeline:
-  Nov 10th - Find data to train the AI model
-    - Find data from API such google maps, weather apps, etc. 
-    - Find historical data to train current model. 
+  - Nov 10th - Find data to train the AI model
+    - Find data from API such as Google Maps, weather apps, etc.
+    - Find historical data to train current model.
     - Do independent research by going to libraries or asking peers.
-  Nov 12th - Build Basic Functions
+  - Nov 12th - Build Basic Functions
     - Code basic methods to retrieve the data for the map and list.
-    - Show the map with a few test spots and the list beside it (just a few spots for now with random satisfaction score)
+    - Show the map with a few test spots and the list beside it (just a few spots for now with random satisfaction score).
     - Check if clicking on a spot actually works (shows details).
-    - Create test cases to make sure these work
-  Nov 15th - Add Feedback & Test Cases
+    - Create test cases to make sure these work.
+  - Nov 15th - Add Feedback & Test Cases
     - Code the feedback form so users can report what spot they went to and when.
     - Write test cases to check that feedback is saved correctly.
-    - Update the map/list using feedback (colours or scores change). (logic will change once we implement AI)
-  Nov 18th - Code the AI logic
-    - Create the AI that is capable of predicting accurately the satisfaction score
-    - Create a bunch of test cases to make sure this works
-  Nov 21st - Final Logic & Polish
+    - Update the map/list using feedback (colors or scores change). (Logic will change once we implement AI.)
+  - Nov 18th - Code the AI logic
+    - Create the AI that is capable of predicting the satisfaction score accurately.
+    - Create a bunch of test cases to make sure this works.
+  - Nov 21st - Final Logic & Polish
     - Create the scoring logic so spots are ranked automatically.
-    - Add finishing small UI improvements (colours, layout, mobile view).
+    - Add finishing small UI improvements (colors, layout, mobile view).
     - Do final black-box testing to make sure the web works as intended.
 
 
 
 
 
-How we will verify project works
-  For the following are just otherways we can test the product aside from test cases:.
+5. How we will verify project works - For the following are just otherways we can test the product aside from test cases:
 
-  1. Map Display
+  - Map Display
+     
     - Interactive map of UBC campus
       - Test: Load the map on both desktop and mobile. See if the map of the campus is shown.
       - Pass: Map appears and is readable.
       - Tester: Jason, Daniel
-  
+        
     - Coloured spots for study locations (green = high availability, red = low)
       - Test: Add study spaces with loaded satisfaction score and check the colour.
       - Pass: Colours match the expected expected colours.
@@ -154,14 +162,15 @@ How we will verify project works
       - Pass: All locations show correct info.
       - Tester: Soren
   
-  2. Search and Filtering
-    2.1 Search
+  - Search and Filtering
+     
+    - Search
       - Query by study space name or building
         - Test: Type known names and buildings into the search box. 
         - Pass: Results match query.
         - Tester: Samuel
 
-    2.2 Filters
+    - Filters
       - Filter by features (quiet, plugs, whiteboard, etc.)
         - Test: Do each possible combination of filters or random combinations if the number of filters get too large.
         - Pass: Only spots with selected features appear on map and list.
@@ -177,19 +186,22 @@ How we will verify project works
         - Pass: Check if the filters are always there
         - Tester: Daniel
   
-  3. Availability and Prediction
+  - Availability and Prediction
+     
     - Short-term availability prediction (next 2 hours)
       - Test: Input historical data, run prediction function, compare with expected trend.
       - Pass: Predicted availability is reasonable and updates every 30 minutes (might change).
       - Tester: Soren
 
-  4. User Interaction and Feedback (rest is covered in other parts)
+  - User Interaction and Feedback (rest is covered in other parts)
+     
     - Check-in option
       - Test: Submit feedback and check-ins for test spots.
       - Pass: Anonymous data are recorded in the database.
       - Tester: Soren
 
-  5. Spot List & Ranking 
+  - Spot List & Ranking
+     
     Right-side panel shows ranked list
       - Test: Have a bunch of items in the list. Compare list order with computed availability scores.      
       - Pass: List matches expected ranking. 
@@ -200,7 +212,8 @@ How we will verify project works
       - Pass: List updates immediately to match current data.      
       - Tester: Daniel
 
-  6. Data & Privacy
+  - Data & Privacy
+     
     - No personal information is stored
       - Test: Inspect database/logs.     
       - Pass: nothing suspicious found.
@@ -216,7 +229,8 @@ How we will verify project works
       - Pass: HTTPS active for all connections.      
       - Tester: Soren  
 
-  7. AI / Prediction Logic
+  - AI / Prediction Logic
+     
     - Score output 0–100 for each spot  
       - Test: Provide a known input and check output score range.  
       - Pass: Score is between 0–100.
