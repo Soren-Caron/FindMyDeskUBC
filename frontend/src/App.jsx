@@ -4,7 +4,32 @@ import MapUBC from "./components/Map/MapUBC";
 import Sidebar from "./components/Sidebar/Sidebar";
 import FeedbackPanel from "./components/Feedback/FeedBackPanel";
 import { spots as initialSpots } from "./data/spots";
+/*
+Spec (App.jsx):
 
+- Manages the main app layout: Sidebar, Map, and FeedbackPanel.
+
+- State:
+    selectedSpot       → which library/spot is clicked
+    spotsData          → all spots with fetched busy scores
+    filteredSpots      → spots filtered by Sidebar
+    clientSessionId    → unique user/session ID stored in localStorage
+
+- On mount (useEffect):
+    • Fetches busy scores for all initial spots from /predict endpoint.
+    • Updates spotsData and filteredSpots with the results.
+    • Defaults busy_score to 0.5 on API failure.
+
+- Layout:
+    • Left: Sidebar for filtering/selecting spots
+    • Center: Map component displaying filtered spots
+    • Right: FeedbackPanel for submitting user feedback
+
+- Passes necessary props to child components:
+    Sidebar → (onSelectSpot, onFilteredChange, spots)
+    MapUBC  → (selectedSpot, filteredSpots)
+    FeedbackPanel → (selectedSpot, clientSessionId)
+*/
 export default function App() {
   const [selectedSpot, setSelectedSpot] = useState(null);
 
