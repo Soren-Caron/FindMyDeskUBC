@@ -1,3 +1,9 @@
+/*
+Spec (global.css):
+
+- :root:
+    Sets base font, colors, smoothing, and dark/light color scheme.
+*/
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,14 +18,21 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/*
 
+- html, body, #root:
+    Removes margins, sets full width/height, ensures app fills the screen.
+*/
 html, body, #root {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100vh;   /* ← THIS FIXES IT */
 }
-
+/*
+- a:
+    Styles links with custom color and hover effect.
+*/
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,19 +41,27 @@ a {
 a:hover {
   color: #535bf2;
 }
-
+/*
+- body:
+    Ensures minimum viewport size for layout stability.
+*/
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
 }
-
-
+/*
+- h1:
+    Large heading size.
+*/
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
+/*
+- button:
+    Rounded buttons with dark background and hover/ focus styling.
+*/
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -59,7 +80,11 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+/*
+- Light mode override (@media):
+    Switches text, background, link, and button colors when the user
+    prefers light color scheme.
+*/
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
