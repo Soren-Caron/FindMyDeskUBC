@@ -1,3 +1,12 @@
+/*
+Spec (Home.jsx):
+
+- Renders a two-column layout:
+    • Left (flex: 2): UBC campus map using <MapUBC />
+    • Right (flex: 1): Placeholder area for a “Top Study Spots” list.
+
+- No state management; purely layout and presentation.
+*/
 import MapUBC from "../components/Map/MapUBC";
 
 export default function Home() {
