@@ -1,4 +1,40 @@
 # backend/model.py
+"""
+Spec (model.py):
+
+- normalize_desk_to_library(raw):
+    Maps raw desk names from CSV to standardized library names.
+
+- get_bin_from_hour(hour):
+    Converts hour (0–23) into 3-hour bin index 0–7.
+
+- train_model():
+    Loads desk_logs.csv, maps desks→libraries, bins timestamps,
+    builds normalized per-library and global busy patterns.
+    Saves lookup.json and returns:
+        {
+          "per_library": {lib: {bin: score}},
+          "global": {bin: score}
+        }
+
+- get_feedback_score(spot):
+    Reads feedback.csv (last 14 days), averages busy_rating for spot,
+    returns normalized score 0–1 or None.
+
+- load_lookup():
+    Loads lookup.json (requires /train first).
+
+- apply_weather_adjustment(base_score, dt):
+    Calls get_weather(), computes weather factor, returns adjusted score
+    and weather details.
+
+- predict_busy_score(spot, timestamp):
+    Uses 3-hour bin model, optional feedback, and weather to compute:
+        {
+          spot, bin, model_score, feedback_score,
+          score_before_weather, weather, busy_score
+        }
+"""
 
 from __future__ import annotations
 
