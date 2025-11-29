@@ -3,11 +3,11 @@ A smart AI web app that provides UBC students with the best available study-spot
 
 Team & Roles (fill in names)
 
-  Project Manager (PM): Name
+  Project Manager (PM): Soren Caron
   
-  Designer: Name
+  Designer: Samuel Zhu
   
-  Developers: Name, Name
+  Developers: Jason Chen, Daniel Wang, Dow
 
 Milestones & Suggested Schedule (Oct 20 — Dec 5)
 
