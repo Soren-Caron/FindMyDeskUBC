@@ -1,3 +1,14 @@
+/*
+Spec (spots.js):
+
+- Exports a static list of study spots on UBC campus.
+- Each spot includes:
+    id            - unique identifier
+    name          - library/space name
+    lat, lng      - map coordinates
+    features      - simple tags describing the space
+    busy_score    - filled later by API; defaults to null
+*/
 export const spots = [
   { id: 1, name: "IKBLC", lat: 49.267938, lng: -123.252398, features: ["quiet", "outlets"], busy_score: null },
 
