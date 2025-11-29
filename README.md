@@ -10,6 +10,7 @@ Team & Roles (fill in names)
   Developers: Name, Name
 
 Milestones & Suggested Schedule (Oct 20 — Dec 5)
+
   Milestone 1 
     •Design your Team
     •Design Your Solution 
