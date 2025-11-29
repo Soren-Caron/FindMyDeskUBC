@@ -9,16 +9,16 @@ export default function HeatmapLayer({ points }) {
     if (!map || !points || points.length === 0) return;
 
     const heat = window.L.heatLayer(points, {
-      radius: 65,         // 🔥 Larger red core
-      blur: 15,           // 🔥 Sharper falloff prevents red→yellow fading
-      maxOpacity: 1.0,    // 🔥 Strong colors
+      radius: 65,         
+      blur: 15,         
+      maxOpacity: 1.0,  
       maxZoom: 19,
       gradient: {
         0.0: "green",
         0.3: "yellowgreen",
         0.5: "yellow",
         0.7: "orange",
-        0.9: "red",       // 🔥 Wider red band
+        0.9: "red",     
       },
     }).addTo(map);
 

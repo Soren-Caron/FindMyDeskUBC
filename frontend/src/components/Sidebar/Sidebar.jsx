@@ -39,9 +39,9 @@ export default function Sidebar({ onSelectSpot, onFilteredChange }) {
         background: "#1e1e1e",
         color: "white",
         padding: "20px",
-        boxSizing: "border-box",  // ⭐ FIX
+        boxSizing: "border-box", 
         overflowY: "auto",
-        overflowX: "hidden",      // ⭐ FIX
+        overflowX: "hidden",     
         boxShadow: "-2px 0 8px rgba(0,0,0,0.4)",
         display: "flex",
         flexDirection: "column",

@@ -2,13 +2,12 @@ import { useState, useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import MapUBC from "./components/Map/MapUBC";
 import Sidebar from "./components/Sidebar/Sidebar";
-import FeedbackPanel from "./components/Feedback/FeedbackPanel";
+import FeedbackPanel from "./components/Feedback/FeedBackPanel";
 import { spots as initialSpots } from "./data/spots";
 
 export default function App() {
   const [selectedSpot, setSelectedSpot] = useState(null);
 
-  // Store spots WITH busy_scores from backend
   const [spotsData, setSpotsData] = useState([]);
   const [filteredSpots, setFilteredSpots] = useState([]);
 
@@ -20,7 +19,6 @@ export default function App() {
     return newId;
   });
 
-  // ---- Fetch busy scores on load ----
   useEffect(() => {
     async function loadScores() {
       const now = new Date().toISOString();

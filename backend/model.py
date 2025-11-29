@@ -415,12 +415,10 @@ def predict_busy_score(spot: str, timestamp: Optional[str] = None) -> Dict[str, 
     """
     lookup = load_lookup()
 
-    # --- Determine the time to use ---
     if timestamp:
         try:
             dt = datetime.fromisoformat(timestamp)
         except ValueError:
-            # If bad timestamp, fall back to "now"
             dt = datetime.utcnow()
     else:
         dt = datetime.utcnow()
@@ -428,7 +426,6 @@ def predict_busy_score(spot: str, timestamp: Optional[str] = None) -> Dict[str, 
     bin_id = get_bin_from_hour(dt.hour)
     bin_key = str(bin_id)
 
-    # --- 1) Model score from desk logs ---
     per_library = lookup.get("per_library", {})
     global_lookup = lookup.get("global", {})
 
@@ -440,7 +437,6 @@ def predict_busy_score(spot: str, timestamp: Optional[str] = None) -> Dict[str, 
         model_score = float(global_lookup.get(bin_key, 0.5))  # fallback mid-busy
         model_source = "global_fallback"
 
-    # --- 2) Feedback score (recent) ---
     feedback_score = get_feedback_score(spot, now=dt)
 
     if feedback_score is None:
@@ -452,7 +448,6 @@ def predict_busy_score(spot: str, timestamp: Optional[str] = None) -> Dict[str, 
 
     blended_score = max(0.0, min(1.0, blended_score))
 
-    # --- 3) Weather adjustment ---
     final_score, weather_details = apply_weather_adjustment(blended_score, dt)
 
     return {
