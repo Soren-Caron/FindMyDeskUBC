@@ -1,3 +1,28 @@
+/*
+Spec (styles.css):
+
+- Imports Leaflet's default CSS for map rendering.
+
+- #root:
+    Centers main app container, sets max width and padding.
+
+- .logo:
+    Logo styling with hover glow effects and optional spin animation.
+
+- @keyframes logo-spin:
+    Defines continuous rotation animation.
+
+- Responsive rule:
+    Applies spinning animation to the second logo link if reduced-motion
+    is not requested.
+
+- .card:
+    Adds padding to card components.
+
+- .read-the-docs:
+    Styles helper text with gray color.
+*/
+
 @import "leaflet/dist/leaflet.css";
 
 #root {
