@@ -15,20 +15,17 @@ def test_root():
     assert r.status_code == 200
     assert r.json()["status"] == "backend running"
 
-
 def test_predict_missing_lookup(monkeypatch):
     monkeypatch.setattr("model.LOOKUP_PATH", "does_not_exist.json")
 
     r = client.get("/predict?spot=Koerner")
     assert r.status_code == 500
 
-
 def test_predict_success(monkeypatch):
     fake_lookup = {
         "per_library": {"Koerner": {"0": 0.7}},
         "global": {"0": 0.5},
     }
-
     monkeypatch.setattr("model.load_lookup", lambda: fake_lookup)
     monkeypatch.setattr("model.get_feedback_score", lambda *a, **k: 0.8)
     monkeypatch.setattr(
@@ -41,3 +38,4 @@ def test_predict_success(monkeypatch):
     data = r.json()
     assert data["spot"] == "Koerner"
     assert 0 <= data["busy_score"] <= 1
+
