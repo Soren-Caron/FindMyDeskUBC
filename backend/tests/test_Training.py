@@ -12,7 +12,6 @@ from datetime import datetime, timezone
 
 from model import train_model, predict_busy_score
 
-
 def test_train_model(tmp_path, monkeypatch):
     csv = tmp_path / "desk_logs.csv"
     df = pd.DataFrame({
@@ -33,7 +32,6 @@ def test_train_model(tmp_path, monkeypatch):
     assert "per_library" in lookup
     assert "global" in lookup
     assert (tmp_path / "lookup.json").exists()
-
 
 def test_predict_busy_score(tmp_path, monkeypatch):
     lookup_json = tmp_path / "lookup.json"
@@ -56,3 +54,4 @@ def test_predict_busy_score(tmp_path, monkeypatch):
     assert result["model_score"] == 0.8
     assert result["feedback_score"] == 0.6
     assert 0 <= result["busy_score"] <= 1
+
