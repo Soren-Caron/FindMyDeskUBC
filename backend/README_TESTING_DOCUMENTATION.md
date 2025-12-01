@@ -16,11 +16,7 @@ from pathlib import Path
 BACKEND_DIR = Path(file).resolve().parents[1]
 if str(BACKEND_DIR) not in sys.path:
 sys.path.insert(0, str(BACKEND_DIR))
-This guarantees pytest can always import `main` and `model`, no matter where tests are run from.
-
----
-**Note Chatgpyt was used to help generate some of the test cases.
-*These tests were mainly written to catch bugs in our code
+This guarantees pytest can always import main and model, no matter where tests are run from.
 
 Test Categories
 
@@ -41,8 +37,6 @@ Mocking is used to simulate:
 
 These tests validate correctness of transformation logic and edge-case handling.
 
----
-
 2. Model Training Tests (test_Training.py)
 
 These tests check the model training phase:
@@ -54,8 +48,6 @@ These tests check the model training phase:
   - global  
 
 We use tmp_path to create temporary CSV files so tests never modify the real dataset.
-
----
 
 3. Prediction Pipeline Tests (test_training_pipeline.py)
 
@@ -70,8 +62,6 @@ Validates the full prediction pipeline with mocked components:
   - adjusted score  
 
 Ensures robustness even when external systems fail or return special values.
-
----
 
 4. API Tests (test_API.py)
 
@@ -97,5 +87,6 @@ After fixing imports and path issues, all tests now pass:
     15 passed in 0.81s
 
 This confirms the backend is fully test-covered and functioning.
+
 
 
