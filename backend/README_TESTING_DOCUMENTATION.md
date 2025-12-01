@@ -80,13 +80,8 @@ Intentionally forces the model to throw FileNotFoundError and verifies the API h
 
 This guarantees predictable API behavior.
 
----
+After fixing imports and path issues, all tests now pass.
 
-After fixing imports and path issues, all tests now pass:
-
-    15 passed in 0.81s
-
-This confirms the backend is fully test-covered and functioning.
 
 
 
