@@ -1,4 +1,19 @@
 import { useState } from "react";
+/**
+ * Purpose:
+ *   Filter panel for the map. Lets the user toggle openNow, aiOnly, and type.
+ *   The panel can also collapse so it doesn't cover the map.
+ *
+ * Inputs:
+ *   filters:
+ *     Current filter values coming from the parent component.
+ *
+ *   setFilters:
+ *     Updates the parent's filters whenever the user changes something.
+ *
+ * Output:
+ *   Returns the UI for the panel (checkboxes + dropdown).
+ */
 
 export default function FilterPanel({ filters, setFilters }) {
   const [open, setOpen] = useState(true);
