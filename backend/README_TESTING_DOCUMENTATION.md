@@ -67,20 +67,8 @@ Ensures robustness even when external systems fail or return special values.
 
 We use FastAPI’s TestClient to simulate real HTTP requests.
 
-Endpoints tested:
-
-### `/`
-Checks backend is running.
-
-### `/predict` success
-Mocks model + weather + feedback → ensures API returns a valid prediction.
-
-### `/predict` when lookup.json is missing
-Intentionally forces the model to throw FileNotFoundError and verifies the API handles it correctly.
-
-This guarantees predictable API behavior.
-
 After fixing imports and path issues, all tests now pass.
+
 
 
 
