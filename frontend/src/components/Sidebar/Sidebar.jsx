@@ -1,6 +1,21 @@
 import { useState, useEffect } from "react";
 import { spots } from "../../data/spots";
-
+/**
+ * Purpose:
+ *   Sidebar for browsing and filtering study spots. Handles search, tag-style
+ *   filters, and tells the map which spots to show and which one was selected.
+ *
+ * Inputs:
+ *   onSelectSpot:
+ *     Called when the user clicks a spot in the list. Gets the full spot object.
+ *
+ *   onFilteredChange:
+ *     Called whenever search text or filters change. Receives the current
+ *     filtered list of spots so the map can update.
+ *
+ * Output:
+ *   Returns the sidebar UI: search bar, spot list, and filter buttons.
+ */
 export default function Sidebar({ onSelectSpot, onFilteredChange }) {
   const [activeFilters, setActiveFilters] = useState([]);
   const [search, setSearch] = useState("");
