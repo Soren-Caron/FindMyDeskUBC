@@ -1,3 +1,13 @@
+/**
+ * Displays an interactive map of UBC with:
+ *   - markers for study spots
+ *   - a heatmap based on how busy each spot is
+ *   - recentring on a selected spot
+ *
+ * This is the main map component used in the frontend to show
+ * where each spot is on campus and how busy it is.
+ */
+
 // ------------------- IMPORTS -------------------
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -20,8 +30,25 @@ L.Icon.Default.mergeOptions({
 
 import { spots } from "../../data/spots";
 import HeatmapLayer from "./HeatmapLayer";
-
 // ------------------- RECENTER COMPONENT -------------------
+/**
+ * Purpose:
+ *   Recenters the map when the user selects a specific study spot.
+ *
+ * Inputs:
+ *   selectedSpot:
+ *     Object containing { lat, lng }. If provided, the map view shifts
+ *     to this location with a smooth animation. If null, nothing happens.
+ *
+ * Output:
+ *   Returns null. This function does not display UI.
+ *
+ * Behaviour:
+ *   Uses Leaflet's map.setView() to update the visible region of the map.
+ *   This component is included inside the map so that it runs whenever
+ *   the selectedSpot value changes.
+ */
+
 function RecenterOnSpot({ selectedSpot }) {
   const map = useMap();
   if (selectedSpot) {
@@ -29,8 +56,27 @@ function RecenterOnSpot({ selectedSpot }) {
   }
   return null;
 }
-
 // --------------------- MAIN MAP --------------------------
+/**
+ * Purpose:
+ *   Main map for showing UBC study spots. Displays markers and a heatmap
+ *   based on each spot's busy_score. Also recenters the map if a spot is selected.
+ *
+ * Inputs:
+ *   selectedSpot:
+ *     The spot the user clicked on. If set, the map moves to this location.
+ *
+ *   filteredSpots:
+ *     Optional list of spots to show. If not given or empty, show all spots.
+ *
+ * Output:
+ *   Returns the full Leaflet map with markers, popups, the heatmap, and recentering.
+ *
+ * Behaviour:
+ *   - Chooses which spots to render (filtered or all).
+ *   - Converts each busy_score into a heatmap intensity.
+ *   - Clamps and boosts values so the heatmap differences are easier to see.
+ */
 export default function MapUBC({ selectedSpot, filteredSpots }) {
   const spotsToShow =
     filteredSpots && filteredSpots.length > 0 ? filteredSpots : spots;
