@@ -2,22 +2,21 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
 /**
  * Purpose:
- *   Slide-up feedback panel for a study spot. Lets the user rate how busy it was,
- *   how accurate the description felt, and leave an optional comment. Sends this
- *   data to the Supabase "feedback" table.
+ *   Slide-up feedback panel for a study spot. Lets the user rate how busy it felt,
+ *   how accurate the description was, and leave an optional comment.
+ *   Sends that feedback to the backend.
  *
  * Inputs:
  *   selectedSpot:
- *     Spot the feedback is about. Used for spot_id in the payload and for showing
- *     the spot name in the header. Can be null.
+ *     The spot the user is giving feedback on. Can be null if nothing is selected.
  *
  *   clientSessionId:
- *     Optional id to tag feedback from the same browser session.
+ *     Optional id tied to the user's session (used when submitting feedback).
  *
  * Output:
- *   Returns the feedback panel UI with the toggle button, two sliders, a textarea,
- *   and submit/reset buttons.
+ *   Returns the panel UI with sliders, text input, submit, and reset.
  */
+
 export default function FeedbackPanel({ selectedSpot = null, clientSessionId = null }) {
   const [open, setOpen] = useState(() => {
     try {
