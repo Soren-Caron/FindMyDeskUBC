@@ -11,10 +11,15 @@ How to install and use
   6. Open two separate terminal tabs. In one go to backend folder and then run “python -m uvicorn main:app --reload”
   7. In the other terminal tab go to the frontend and then run “npm install” and then run command “npm run dev”.
 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 How we tested the product:
 
   The testing was carried carried out differently across frontend and backend. We used pathlib to test python code. We also used coverage.py to check code coverage and we scored about 73% branch coverage. Read README_TESTING_DOCUMENTATION.md for more information.
   Front end creating designed tests was difficult. As a result we decided to check the website itself. We played around with it each time we changed it, checking many different ways and edge cases to look for ways the code could break or result in unpredictable behaviours. 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Known Bugs and future expectations:
 
@@ -25,7 +30,10 @@ Known Bugs and future expectations:
   Filters could be more accurate. We’ll do some research to see how the filters fit.
   Map is slow or laggy sometimes. Probably caused by large JSON files/too many markers. Will fix in the future by using MarkerClusterer and canvas rendering when possible. 
 
-Contribution statement
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Contribution statement:
 
   Soren (Project Manager)
   
