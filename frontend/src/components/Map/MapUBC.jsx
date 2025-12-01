@@ -37,16 +37,11 @@ import HeatmapLayer from "./HeatmapLayer";
  *
  * Inputs:
  *   selectedSpot:
- *     Object containing { lat, lng }. If provided, the map view shifts
+ *     Object containing { lat, lng }. The map view shifts
  *     to this location with a smooth animation. If null, nothing happens.
  *
  * Output:
  *   Returns null. This function does not display UI.
- *
- * Behaviour:
- *   Uses Leaflet's map.setView() to update the visible region of the map.
- *   This component is included inside the map so that it runs whenever
- *   the selectedSpot value changes.
  */
 
 function RecenterOnSpot({ selectedSpot }) {
@@ -71,12 +66,8 @@ function RecenterOnSpot({ selectedSpot }) {
  *
  * Output:
  *   Returns the full Leaflet map with markers, popups, the heatmap, and recentering.
- *
- * Behaviour:
- *   - Chooses which spots to render (filtered or all).
- *   - Converts each busy_score into a heatmap intensity.
- *   - Clamps and boosts values so the heatmap differences are easier to see.
  */
+
 export default function MapUBC({ selectedSpot, filteredSpots }) {
   const spotsToShow =
     filteredSpots && filteredSpots.length > 0 ? filteredSpots : spots;
