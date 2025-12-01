@@ -1,6 +1,18 @@
 import { useMap } from "react-leaflet";
 import "leaflet.heat";
 import { useEffect } from "react";
+/**
+ * Purpose:
+ *   Draws a heatmap on top of the Leaflet map using the given points.
+ *   Each point is [lat, lng, intensity].
+ *
+ * Inputs:
+ *   points:
+ *     Array of heatmap points. If empty or missing, nothing is drawn.
+ *
+ * Output:
+ *   Returns null. This component only adds the heat layer to the map.
+ */
 
 export default function HeatmapLayer({ points }) {
   const map = useMap();
