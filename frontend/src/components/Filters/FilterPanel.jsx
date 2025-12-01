@@ -1,7 +1,7 @@
 import { useState } from "react";
 /**
  * Purpose:
- *   Filter panel for the map. Lets the user toggle openNow, aiOnly, and type.
+ *   Filter panel for the map. Lets the user filter for quiet, group friendly, power outlets, and food nearby.
  *   The panel can also collapse so it doesn't cover the map.
  *
  * Inputs:
